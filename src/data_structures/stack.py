@@ -8,6 +8,7 @@ class Stack:
     Attributes:
         items (List[Any]): The list used to store elements in the stack.
     """
+
     def __init__(self):
         """
         Initializes an empty stack.

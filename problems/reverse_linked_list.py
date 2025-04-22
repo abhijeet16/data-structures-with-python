@@ -9,14 +9,13 @@ Expected Output:
     Output: [5, 4, 3, 2, 1]
 """
 
+from src.data_structures.linked_list import LinkedList
 import sys
 import os
 
 # Add the root directory to the Python path
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-
-from src.data_structures.linked_list import LinkedList
 
 def reverse_linked_list(linked_list):
     reversed_list = LinkedList()
@@ -28,6 +27,7 @@ def reverse_linked_list(linked_list):
     while stack:
         reversed_list.append(stack.pop())
     return reversed_list
+
 
 if __name__ == "__main__":
     ll = LinkedList()

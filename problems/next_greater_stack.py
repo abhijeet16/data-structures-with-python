@@ -1,18 +1,19 @@
 """
-Problem: Next Greater Element
+Problem: Next Greater Element using Stack
 Description:
-    Write a function to find the next greater element for each element in an array using a stack.
+    Write a function to find the next greater element for each element.
 
 Expected Output:
     Input: [4, 5, 2, 10]
     Output: [5, 10, 10, -1]
 """
 
+from src.data_structures.stack import Stack
 import sys
 import os
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from src.data_structures.stack import Stack
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 
 def next_greater_element(arr):
     stack = Stack()
@@ -24,6 +25,7 @@ def next_greater_element(arr):
             result[i] = stack.peek()
         stack.push(arr[i])
     return result
+
 
 if __name__ == "__main__":
     arr = [4, 5, 2, 10]

@@ -21,10 +21,16 @@ def test_dequeue():
     queue.enqueue(1)
     queue.enqueue(2)
     queue.enqueue(3)
-    assert queue.dequeue() == 1, "Dequeue operation failed for the first element."
+    assert (
+        queue.dequeue() == 1
+    ), "Dequeue operation failed for the first element."
     assert queue.display() == [2, 3], "Queue state after dequeue is incorrect."
-    assert queue.dequeue() == 2, "Dequeue operation failed for the second element."
-    assert queue.display() == [3], "Queue state after second dequeue is incorrect."
+    assert (
+        queue.dequeue() == 2
+    ), "Dequeue operation failed for the second element."
+    assert queue.display() == [
+        3
+    ], "Queue state after second dequeue is incorrect."
 
 
 def test_dequeue_empty():
@@ -45,7 +51,9 @@ def test_front():
     queue.enqueue(2)
     assert queue.front() == 1, "Front operation failed for the first element."
     queue.dequeue()
-    assert queue.front() == 2, "Front operation failed after dequeuing an element."
+    assert (
+        queue.front() == 2
+    ), "Front operation failed after dequeuing an element."
 
 
 def test_front_empty():
@@ -64,9 +72,13 @@ def test_is_empty():
     queue = Queue()
     assert queue.is_empty() is True, "Queue should be empty initially."
     queue.enqueue(1)
-    assert queue.is_empty() is False, "Queue should not be empty after enqueue."
+    assert (
+        queue.is_empty() is False
+    ), "Queue should not be empty after enqueue."
     queue.dequeue()
-    assert queue.is_empty() is True, "Queue should be empty after dequeuing all elements."
+    assert (
+        queue.is_empty() is True
+    ), "Queue should be empty after dequeuing all elements."
 
 
 def test_size():
@@ -92,4 +104,6 @@ def test_clear():
     queue.enqueue(3)
     queue.clear()
     assert queue.is_empty() is True, "Queue should be empty after clearing."
-    assert queue.display() == [], "Queue display should be empty after clearing."
+    assert (
+        queue.display() == []
+    ), "Queue display should be empty after clearing."

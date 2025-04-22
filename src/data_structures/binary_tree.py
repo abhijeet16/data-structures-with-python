@@ -10,6 +10,7 @@ class Node:
         left (Optional[Node]): Reference to the left child node.
         right (Optional[Node]): Reference to the right child node.
     """
+
     def __init__(self, key: int):
         self.left: Optional[Node] = None
         self.right: Optional[Node] = None
@@ -23,6 +24,7 @@ class BinaryTree:
     Attributes:
         root (Optional[Node]): The root node of the binary tree.
     """
+
     def __init__(self):
         """
         Initializes an empty binary tree.
@@ -40,7 +42,9 @@ class BinaryTree:
             ValueError: If the key is not an integer.
         """
         if not isinstance(key, int):
-            raise ValueError("Only integer keys are allowed in the binary tree.")
+            raise ValueError(
+                "Only integer keys are allowed in the binary tree."
+            )
         if self.root is None:
             self.root = Node(key)
         else:
@@ -77,7 +81,9 @@ class BinaryTree:
         """
         return self._search_recursively(self.root, key)
 
-    def _search_recursively(self, current_node: Optional[Node], key: int) -> bool:
+    def _search_recursively(
+        self, current_node: Optional[Node], key: int
+    ) -> bool:
         """
         Helper method to recursively search for a key in the tree.
 

@@ -8,11 +8,12 @@ Expected Output:
     Output: True
 """
 
+from src.data_structures.linked_list import LinkedList
 import sys
 import os
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from src.data_structures.linked_list import LinkedList
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 
 def detect_cycle(linked_list):
     slow = linked_list.head
@@ -23,6 +24,7 @@ def detect_cycle(linked_list):
         if slow == fast:
             return True
     return False
+
 
 if __name__ == "__main__":
     ll = LinkedList()
