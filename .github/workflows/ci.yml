@@ -27,7 +27,7 @@ jobs:
         pip install flake8
 
     - name: Run lint check
-      run: flake8 src tests # Adjust paths as needed
+      run: flake8 src tests problems # Adjust paths as needed
       
   test:
     runs-on: ubuntu-latest

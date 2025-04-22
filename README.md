@@ -14,6 +14,7 @@ This project demonstrates the implementation of various fundamental data structu
 - Unit tests for each data structure to ensure correctness and reliability.
 - Demonstration of data structure operations through a `main.py` script.
 - A `problems` folder containing practical coding problems based on the implemented data structures.
+- Continuous Integration (CI) pipeline to ensure code quality and correctness.
 
 ---
 
@@ -70,18 +71,31 @@ This will execute the `reverse_linked_list.py` file and display the expected out
 
 ---
 
-## Testing
+## Testing and Linting
 
-### Running All Tests
-To ensure the correctness of the data structures, run the unit tests using `pytest`:
+### Continuous Integration (CI)
+This project uses a CI pipeline to ensure code quality and correctness. The pipeline performs the following checks:
+1. **Lint Check**: Ensures the code adheres to Python coding standards using `flake8`.
+2. **Unit Tests**: Runs all tests in the `tests` folder using `pytest`.
 
+The CI pipeline runs automatically on every push and pull request. If any linting or test fails, the pipeline will fail, and the branch cannot be merged into the `main` branch.
+
+### Checking Locally Before Pushing
+To avoid CI failures, you can run the lint check and tests locally before pushing your code:
+
+#### 1. Run Lint Check
+```bash
+flake8 src tests problems
+```
+This will check for any linting issues in the `src`, `problems` and `tests` directories.
+
+#### 2. Run All Tests
 ```bash
 pytest
 ```
-
 This will execute all the test cases defined in the `tests` directory.
 
-### Running Specific Tests
+#### 3. Running Specific Tests
 To run tests for a specific data structure, use:
 ```bash
 pytest tests/test_<data_structure>.py
@@ -90,6 +104,18 @@ For example:
 ```bash
 pytest tests/test_linked_list.py
 ```
+
+#### 4. Fix Issues
+- Format your files with `black` first.
+```bash
+black src tests problems
+```
+- Now, check lint with
+```bash
+flake8 src tests problems
+```
+- If the lint check fails, fix the reported issues in your cod individually.
+- If any test fails, debug and fix the implementation or the test case.
 
 ---
 
@@ -124,6 +150,7 @@ data-structures-with-python/
 - **src/main.py**: Demonstrates the usage of the data structures.
 - **problems/**: Contains coding problems based on the implemented data structures. Each file is executable and demonstrates a specific problem.
 - **tests/**: Contains unit tests for each data structure.
+- **.github/workflows/ci.yml**: Defines the CI pipeline for linting and testing.
 
 ---
 
