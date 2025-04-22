@@ -8,11 +8,12 @@ Expected Output:
     Output: [1, 2, 3, 4, 5]
 """
 
+from src.data_structures.linked_list import LinkedList
 import sys
 import os
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from src.data_structures.linked_list import LinkedList
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 
 def remove_duplicates(linked_list):
     current = linked_list.head
@@ -25,6 +26,7 @@ def remove_duplicates(linked_list):
             seen.add(current.data)
             prev = current
         current = current.next
+
 
 if __name__ == "__main__":
     ll = LinkedList()

@@ -9,6 +9,7 @@ class Node:
         data (Any): The data stored in the node.
         next (Optional[Node]): Reference to the next node in the list.
     """
+
     def __init__(self, data: Any):
         """
         Initializes a new node with the given data.
@@ -27,6 +28,7 @@ class LinkedList:
     Attributes:
         head (Optional[Node]): The head node of the linked list.
     """
+
     def __init__(self):
         """
         Initializes an empty linked list.

@@ -8,11 +8,12 @@ Expected Output:
     Output: ['1', '10', '11', '100', '101']
 """
 
+from src.data_structures.queue import Queue
 import sys
 import os
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from src.data_structures.queue import Queue
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 
 def generate_binary_numbers(n):
     queue = Queue()
@@ -24,6 +25,7 @@ def generate_binary_numbers(n):
         queue.enqueue(current + "0")
         queue.enqueue(current + "1")
     return result
+
 
 if __name__ == "__main__":
     n = 7

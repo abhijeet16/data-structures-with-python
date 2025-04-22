@@ -1,18 +1,19 @@
 """
 Problem: Sort a Stack
 Description:
-    Write a function to sort a stack in ascending order using only one additional stack.
+    Write a function to sort a stack in ascending order.
 
 Expected Output:
     Input: [3, 1, 4, 2]
     Output: [1, 2, 3, 4]
 """
 
+from src.data_structures.stack import Stack
 import sys
 import os
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from src.data_structures.stack import Stack
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 
 def sort_stack(stack):
     temp_stack = Stack()
@@ -22,6 +23,7 @@ def sort_stack(stack):
             stack.push(temp_stack.pop())
         temp_stack.push(temp)
     return temp_stack
+
 
 if __name__ == "__main__":
     stack = Stack()

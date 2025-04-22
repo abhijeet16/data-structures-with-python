@@ -8,13 +8,13 @@ Expected Output:
     Dequeue: [2, 3]
 """
 
+from src.data_structures.queue import Queue
 import sys
 import os
 
 # Add the root directory to the Python path
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-from src.data_structures.queue import Queue
 
 def demonstrate_circular_queue():
     queue = Queue()
@@ -24,6 +24,7 @@ def demonstrate_circular_queue():
     print("Queue after enqueues:", queue.display())
     queue.dequeue()
     print("Queue after dequeue:", queue.display())
+
 
 if __name__ == "__main__":
     demonstrate_circular_queue()

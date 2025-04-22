@@ -8,13 +8,13 @@ Expected Output:
     Output: -4
 """
 
+from src.data_structures.stack import Stack
 import sys
 import os
 
 # Add the root directory to the Python path
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-from src.data_structures.stack import Stack
 
 def evaluate_postfix(expression):
     stack = Stack()
@@ -24,15 +24,16 @@ def evaluate_postfix(expression):
         else:
             b = stack.pop()
             a = stack.pop()
-            if char == '+':
+            if char == "+":
                 stack.push(a + b)
-            elif char == '-':
+            elif char == "-":
                 stack.push(a - b)
-            elif char == '*':
+            elif char == "*":
                 stack.push(a * b)
-            elif char == '/':
+            elif char == "/":
                 stack.push(a // b)
     return stack.pop()
+
 
 if __name__ == "__main__":
     postfix_expression = "231*+9-"

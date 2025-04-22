@@ -10,7 +10,9 @@ def test_stack_push():
     stack.push(1)
     stack.push(2)
     stack.push(3)
-    assert stack.peek() == 3, "Push operation failed to set the correct top element."
+    assert (
+        stack.peek() == 3
+    ), "Push operation failed to set the correct top element."
     assert stack.size() == 3, "Stack size is incorrect after pushes."
 
 
@@ -22,10 +24,18 @@ def test_stack_pop():
     stack.push(1)
     stack.push(2)
     stack.push(3)
-    assert stack.pop() == 3, "Pop operation failed to return the correct top element."
-    assert stack.pop() == 2, "Pop operation failed to return the correct second element."
-    assert stack.pop() == 1, "Pop operation failed to return the correct last element."
-    assert stack.is_empty() is True, "Stack should be empty after popping all elements."
+    assert (
+        stack.pop() == 3
+    ), "Pop operation failed to return the correct top element."
+    assert (
+        stack.pop() == 2
+    ), "Pop operation failed to return the correct second element."
+    assert (
+        stack.pop() == 1
+    ), "Pop operation failed to return the correct last element."
+    assert (
+        stack.is_empty() is True
+    ), "Stack should be empty after popping all elements."
 
 
 def test_stack_pop_empty():
@@ -43,11 +53,17 @@ def test_stack_peek():
     """
     stack = Stack()
     stack.push(1)
-    assert stack.peek() == 1, "Peek operation failed to return the correct top element."
+    assert (
+        stack.peek() == 1
+    ), "Peek operation failed to return the correct top element."
     stack.push(2)
-    assert stack.peek() == 2, "Peek operation failed after pushing a new element."
+    assert (
+        stack.peek() == 2
+    ), "Peek operation failed after pushing a new element."
     stack.pop()
-    assert stack.peek() == 1, "Peek operation failed after popping the top element."
+    assert (
+        stack.peek() == 1
+    ), "Peek operation failed after popping the top element."
 
 
 def test_stack_peek_empty():
@@ -66,9 +82,13 @@ def test_stack_is_empty():
     stack = Stack()
     assert stack.is_empty() is True, "Stack should be empty initially."
     stack.push(1)
-    assert stack.is_empty() is False, "Stack should not be empty after pushing an element."
+    assert (
+        stack.is_empty() is False
+    ), "Stack should not be empty after pushing an element."
     stack.pop()
-    assert stack.is_empty() is True, "Stack should be empty after popping all elements."
+    assert (
+        stack.is_empty() is True
+    ), "Stack should be empty after popping all elements."
 
 
 def test_stack_size():

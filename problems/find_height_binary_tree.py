@@ -8,13 +8,13 @@ Expected Output:
     Output: 3
 """
 
+from src.data_structures.binary_tree import BinaryTree
 import sys
 import os
 
 # Add the root directory to the Python path
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-from src.data_structures.binary_tree import BinaryTree
 
 def find_height(node):
     if node is None:
@@ -22,6 +22,7 @@ def find_height(node):
     left_height = find_height(node.left)
     right_height = find_height(node.right)
     return max(left_height, right_height) + 1
+
 
 if __name__ == "__main__":
     tree = BinaryTree()
